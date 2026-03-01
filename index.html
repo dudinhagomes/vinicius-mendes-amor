@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosso Amor</title>
+  <meta name="description" content="Uma pequena página romântica feita com carinho." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <noscript>Ative o JavaScript para ver as surpresas românticas desta página.</noscript>
+
+  <div id="background-decor"></div>
+  <div id="hearts-layer" aria-hidden="true"></div>
+
+  <header class="top">
+    <h1 class="title">Amor da minha vida</h1>
+    <p class="tag">feito com carinho, para você</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 class="subtitle">Cada batida do meu coração sussurra o seu nome</h2>
+      <p class="lead">Desde que te conheci, os dias ficaram mais leves, os sorrisos mais fáceis e o mundo mais bonito. Obrigado por existir e por ser meu homem e fazer parte da minha história.</p>
+
+      <section class="photo">
+        <div class="photo__frame" id="frameFoto" title="Clique para trocar a foto">
+          <img id="fotoNos" class="photo__img" src="" alt="Nossa foto" />
+        </div>
+        <div class="photo__controls">
+          <input id="inputFoto" type="file" accept="image/*" class="visually-hidden" />
+          <button id="btnTrocarFoto" class="btn soft">Adicionar/Alterar foto</button>
+          <small class="photo__hint">minha foto preferida.</small>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="btnSurpresa" class="btn primary">Surpresa</button>
+        <button id="btnHistoria" class="btn soft">Nossa história</button>
+        <button id="btnCarta" class="btn outline">Abrir carta</button>
+      </div>
+
+      <section id="historia" class="story hidden" aria-hidden="true">
+        <ul class="timeline">
+          <li>
+            <span class="when">Dia 1</span>
+            <p>O primeiro olhar que mudou tudo.</p>
+          </li>
+          <li>
+            <span class="when">Nosso momento</span>
+            <p>Risos, conversas sem fim e a certeza de que era para ser.</p>
+          </li>
+          <li>
+            <span class="when">Sempre</span>
+            <p>Promessa de caminhar lado a lado, com carinho e respeito.</p>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Feito com amor • <span id="dedicatory">para você</span></small>
+  </footer>
+
+  <div id="modalCarta" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="tituloCarta">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__content">
+      <button class="modal__close" title="Fechar" aria-label="Fechar" data-close>&times;</button>
+      <h3 id="tituloCarta" class="modal__title">Minha carta para você</h3>
+      <div class="modal__body">
+        <p>Amor,</p>
+        <p>
+          Se eu pudesse guardar um pedacinho de cada riso seu, eu faria um céu
+          inteiro de estrelas só para iluminar nossos dias. Você transforma o
+          simples em mágico e colore cada instante com a beleza do que sentimos.
+        </p>
+        <p>
+          Prometo cuidar do que temos com paciência, respeito e verdade.
+          Prometo te ouvir, te abraçar nos dias difíceis e celebrar com você
+          cada pequena conquista.
+        </p>
+        <p>
+          Obrigado por ser meu lar, meu porto e minha melhor aventura.
+          EU TE AMO, VINICIUS MENDES
+        </p>
+        <p>Com todo o meu amor,</p>
+        <p><strong>♥</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
