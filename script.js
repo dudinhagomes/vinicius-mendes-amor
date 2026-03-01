@@ -67,41 +67,10 @@ function randomAffection() {
   return msgs[Math.floor(Math.random() * msgs.length)];
 }
 
-function loadSavedPhoto() {
-  try {
-    const dataUrl = localStorage.getItem('nossa_foto_dataurl');
-    if (dataUrl) {
-      const img = $('#fotoNos');
-      if (img) img.src = dataUrl;
-    }
-  } catch {}
-}
-
-function pickPhoto() {
-  const input = $('#inputFoto');
-  if (!input) return;
-  input.click();
-}
-
-function handlePhotoChange(e) {
-  const file = e.target.files?.[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    const dataUrl = reader.result;
-    const img = $('#fotoNos');
-    if (img && typeof dataUrl === 'string') {
-      img.src = dataUrl;
-      try { localStorage.setItem('nossa_foto_dataurl', dataUrl); } catch {}
-      toast('Foto atualizada com carinho ♥');
-    }
-  };
-  reader.readAsDataURL(file);
-}
+/* Removido: funcionalidades de foto (carregar/salvar, seletor e handlers) */
 
 function init() {
   spawnHearts();
-  loadSavedPhoto();
 
   $('#btnCarta')?.addEventListener('click', openModal);
   $('#btnHistoria')?.addEventListener('click', () => {
@@ -112,14 +81,7 @@ function init() {
     toast(randomAffection());
   });
 
-  // Foto: preferir interação nativa via label for=input no mobile, mas manter botão como alternativa
-  $('#frameFoto')?.addEventListener('click', pickPhoto);
-  $('#btnTrocarFoto')?.addEventListener('click', pickPhoto);
-  $('#inputFoto')?.addEventListener('change', handlePhotoChange);
-  // iOS Safari: garantir foco antes de abrir seletor via botão
-  $('#btnTrocarFoto')?.addEventListener('touchend', (e) => {
-    try { e.currentTarget?.focus?.(); } catch {}
-  }, { passive: true });
+  // Removido: eventos relacionados à seleção de foto
 
   // fechar modal por backdrop ou X
   $$('#modalCarta [data-close]').forEach((el) => el.addEventListener('click', closeModal));
