@@ -60,7 +60,7 @@ function randomAffection() {
     'Você é meu lugar favorito. ♥',
     'Seu sorriso é meu amanhecer.',
     'Te escolho hoje, amanhã e sempre.',
-    'Obrigada(o) por existir.',
+    'Obrigado por existir.',
     'Com você, tudo faz sentido.',
     'Seus abraços são meu superpoder.'
   ];
