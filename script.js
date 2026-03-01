@@ -112,10 +112,14 @@ function init() {
     toast(randomAffection());
   });
 
-  // Foto: clicar na moldura ou botão abre seletor
+  // Foto: preferir interação nativa via label for=input no mobile, mas manter botão como alternativa
   $('#frameFoto')?.addEventListener('click', pickPhoto);
   $('#btnTrocarFoto')?.addEventListener('click', pickPhoto);
   $('#inputFoto')?.addEventListener('change', handlePhotoChange);
+  // iOS Safari: garantir foco antes de abrir seletor via botão
+  $('#btnTrocarFoto')?.addEventListener('touchend', (e) => {
+    try { e.currentTarget?.focus?.(); } catch {}
+  }, { passive: true });
 
   // fechar modal por backdrop ou X
   $$('#modalCarta [data-close]').forEach((el) => el.addEventListener('click', closeModal));

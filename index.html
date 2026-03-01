@@ -27,12 +27,12 @@
       <p class="lead">Desde que te conheci, os dias ficaram mais leves, os sorrisos mais fáceis e o mundo mais bonito. Obrigado por existir e por ser meu homem e fazer parte da minha história.</p>
 
       <section class="photo">
-        <div class="photo__frame" id="frameFoto" title="Clique para trocar a foto">
+        <label class="photo__frame" id="frameFoto" for="inputFoto" title="Toque para trocar a foto">
           <img id="fotoNos" class="photo__img" src="" alt="Nossa foto" />
-        </div>
+        </label>
         <div class="photo__controls">
-          <input id="inputFoto" type="file" accept="image/*" class="visually-hidden" />
-          <button id="btnTrocarFoto" class="btn soft">Adicionar/Alterar foto</button>
+          <input id="inputFoto" type="file" accept="image/*" capture="environment" class="visually-hidden" />
+          <button id="btnTrocarFoto" class="btn soft" type="button">Adicionar/Alterar foto</button>
           <small class="photo__hint">minha foto preferida.</small>
         </div>
       </section>
